@@ -1,0 +1,118 @@
+img{
+    width: 100%;
+}
+#bg-form{
+    background: url(../img/gloomybg.png) no-repeat;
+    background-color: #75106F ;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .use {
+    color: black;
+    width: 10vw;
+    background-color:#ba96d1;
+    position: absolute;
+    top: 80vh;
+    left: 43vw;
+}
+
+.WelcomeText{
+    top: 50vh;
+    left: 50vw;
+}
+
+.button {
+    border: none;
+    box-shadow: 0 9px#505050;
+    padding: 30px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.button:active {
+    box-shadow: 0 5px #3D3D3D;
+    transform: translateY(5px);
+}
+
+.button:hover {
+    background-color: #3F3F3F;
+}
+
+.red {
+    background-color:#00000000;
+    color: #FF0000;
+}
+
+.green {
+    background-color:#00000000;
+    color: #00FF00;
+}
+
+.blue {
+    background-color:#00000000;
+    color: #0000FF;
+}
+
+.yellow {
+    background-color:#00000000;
+    color: #FFFF00;
+}
+
+.round {
+    border-radius: 50%;
+}
+
+.divTable{
+    position: absolute;
+    top: 60vh;
+    right: 20vw;
+    display: table;
+    width: 25%;
+}
+
+.divTableRow{
+    display: table-row;
+}
+
+.divTableCell, .divTableHead {
+	border: none;
+	display: table-cell;
+	padding: 3px 5px;
+}
+
+.divTableHeading {
+	border: none;
+	display: table-header-group;
+	font-weight: bold;
+}
+
+.divTableFoot {
+	border: none;
+	display: table-footer-group;
+	font-weight: bold;
+}
+
+.divTableBody {
+	display: table-row-group;
+}
+
+
+  html{
+      display: table;
+      margin: auto;
+  }
+
+  body{
+      display: table-cell;
+      overflow: hidden;
+      vertical-align: middle;
+      text-align: center;
+      background-color: #011b0b ;
+      color: white;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
