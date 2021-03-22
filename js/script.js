@@ -206,6 +206,9 @@ function update() {
     {
         counter++
     }
+    var e = document.getElementById("item-select");
+    var strUser = e.options[e.selectedIndex].text;
+    console.log(strUser);
 }
 
 // Draw GameObjects to Console
