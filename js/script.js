@@ -48,12 +48,13 @@ function GamerInput(input) {
 // Default GamerInput is set to None
 var gamerInput = new GamerInput("None"); //No Input
 
-// Default Player
-var sprite = new Image();
-sprite.src = "./img/player.png";
 
 //determines whether or not game can continue
 var gameInProgress = true;
+
+// Loading in sprites used in game
+var sprite = new Image();
+sprite.src = "./img/player.png";
 
 var graveSprite = new Image();
 graveSprite.src = "./img/grave.png";
@@ -67,6 +68,9 @@ bgSprite.src = "./img/bg.png";
 var nameGrave = new Image();
 nameGrave.src = "./img/NamelessGrave.png";
 
+var bossSprite = new Image();
+bossSprite.src = "./img/motor.png";
+
 //used when calculating the time left
 var counter = 0;
 
@@ -74,9 +78,11 @@ var queryString = window.location.search;
 var params = new URLSearchParams(queryString);
 var uname = params.get("username");
 
-var bossFight = true;
+var bossFight = false;
+
 
 var player = new GameObject("Player", sprite, 100,0,0);
+var boss = new GameObject("Boss", bossSprite, 100,-700,180);
 var graveOne = new GameObject("GraveOne", graveSprite , 100,155,250);
 var graveTwo = new GameObject("GraveTwo", graveSprite , 100,355,250);
 var graveThree = new GameObject("GraveThree", graveSprite , 100,555,250);
@@ -131,7 +137,8 @@ var current; // current time
 
 // Process keyboard input event
 function input(event) {
-    // Take Input from the Player
+    if(bossFight == false)
+   {// Take Input from the Player
     if (event.type === "keydown") {
         switch (event.keyCode) {
             case 37:
@@ -165,9 +172,10 @@ function input(event) {
     }
     console.log("Gamer Input :" + gamerInput.action);
 }
+}
 
 function update() {
-    switch (direction)
+   switch (direction)
     {
         case 0:
         player.x = player.x;
@@ -177,6 +185,7 @@ function update() {
             player.x -= 1;
             showAnnouncement = false;
             showHealthAnnounce = false;
+            player.img.src =  "./img/playerBack.png";
         break;
         case 2:
             player.y -= 1;
@@ -187,6 +196,7 @@ function update() {
             player.x += 1;
             showAnnouncement = false;
             showHealthAnnounce = false;
+            player.img.src =  "./img/player.png";
         break;
         case 4:
             player.y += 1;
@@ -194,18 +204,25 @@ function update() {
             showHealthAnnounce = false;
         break;
     }
+    if(bossFight == false)
+    {
     boundaryCheck();
     checkIntersect();
 
     if(counter === 4000)
     {
         console.log("Time is up");
-        gameInProgress = false;
+       // gameInProgress = false;
+       bossFight = true;
     }
     else
     {
         counter++
     }
+}
+else{
+    centreCharacter();
+}
     var e = document.getElementById("item-select");
     var strUser = e.options[e.selectedIndex].text;
     console.log(strUser);
@@ -255,6 +272,10 @@ function animate() {
 
     context.drawImage(userGrave.img, userGrave.x, userGrave.y, 106, 128);
 
+    if(bossFight == true)
+    {
+        context.drawImage(boss.img, boss.x, boss.y, boss.img.width / 1.5, boss.img.height / 1.5);
+    }
 
     context.font = "10px Verdana";
     context.fillStyle = "black";
@@ -394,7 +415,8 @@ function gameloop() {
         window.requestAnimationFrame(gameloop);
     }
     else{
-        gameOver();
+       
+       // gameOver();
     }
 }
 
@@ -411,28 +433,44 @@ document.getElementById("buttonRight").onmouseup = function() {noInput()};
 document.getElementById("buttonDown").onmouseup = function() {noInput()};
 
 function buttonOnClickW(){
-    gamerInput = new GamerInput("Up");
-    direction = 2;
+    if(bossFight == false)
+    {
+        gamerInput = new GamerInput("Up");
+        direction = 2;
+    }
 }
 
 function buttonOnClickA(){
-    gamerInput = new GamerInput("Left");
-    direction = 1;
+    if(bossFight == false)
+    {
+        gamerInput = new GamerInput("Left");
+        direction = 1;
+    }
 }
 
 function buttonOnClickD(){
-    gamerInput = new GamerInput("Right");
-    direction = 3;
+    if(bossFight == false)
+    {
+        gamerInput = new GamerInput("Right");
+        direction = 3;
+    }    
 }
 
+
 function buttonOnClickS(){
-    gamerInput = new GamerInput("Down");
-    direction = 4;
+    if(bossFight == false)
+    {
+        gamerInput = new GamerInput("Down");
+        direction = 4;
+    }
 }
 
 function noInput(){
-    gamerInput = new GamerInput("None");
-    direction = 0;
+    if(bossFight == false)
+    {
+        gamerInput = new GamerInput("None");
+        direction = 0;
+    }
 }
 
 function useButton(){
@@ -500,3 +538,28 @@ function updateScore() {
 
 }
 
+function centreCharacter(){
+
+    if(player.x > 550)
+    {
+        direction = 1;
+    }
+    else if(player.x < 550)
+    {
+        direction = 3;
+    }
+    else if(player.y < (canvas.height - 180))
+    {
+       direction = 4;
+    }
+    else
+    {
+        direction = 0;
+    }
+
+    if(boss.x < -50)
+    {
+        boss.x = boss.x + 1;
+    }
+    
+}

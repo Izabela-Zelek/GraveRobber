@@ -44,9 +44,9 @@ img{
     background-color: #3F3F3F;
 }
 
-.red {
+.magenta {
     background-color:#00000000;
-    color: #FF0000;
+    color: #9e3f8e;
 }
 
 .green {
@@ -54,14 +54,14 @@ img{
     color: #00FF00;
 }
 
-.blue {
+.darkgreen {
     background-color:#00000000;
-    color: #0000FF;
+    color: #126112;
 }
 
-.yellow {
+.purple {
     background-color:#00000000;
-    color: #FFFF00;
+    color: #68167c;
 }
 
 .round {
@@ -70,7 +70,7 @@ img{
 
 .divTable{
     position: absolute;
-    bottom: 10vh;
+    bottom: 5vh;
     right: 20vw;
     display: table;
     width: 25%;
