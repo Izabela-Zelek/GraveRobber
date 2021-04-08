@@ -71,6 +71,10 @@ nameGrave.src = "./img/NamelessGrave.png";
 var bossSprite = new Image();
 bossSprite.src = "./img/motor.png";
 
+var fogSprite = new Image();
+fogSprite.src = "./img/fog.png";
+
+
 //used when calculating the time left
 var counter = 0;
 
@@ -89,6 +93,7 @@ var graveThree = new GameObject("GraveThree", graveSprite , 100,555,250);
 var graveFour = new GameObject("GraveFour", graveSprite , 100,755,250);
 var userGrave = new GameObject("NamelessGrave",nameGrave,100,625,80);
 var bg = new GameObject("Graveyard", gravebg , 100,0,0);
+var fog = new GameObject("Fog", fogSprite , 100,0,0);
 var endScreen = new GameObject("End",bgSprite,100,0,0);
 var buttonSound = document.getElementById("buttonSound");
 
@@ -268,9 +273,13 @@ function animate() {
        if(alive[3] == true){
    context.drawImage(graveFour.img, graveFour.x, graveFour.y, 141.3333333333333, 170.6666666666667);
        }
-    context.drawImage(player.img, (player.img.width / 4) * currentFrame, 0, 214, 368, player.x, player.y, 107, 184);
-
+       
     context.drawImage(userGrave.img, userGrave.x, userGrave.y, 106, 128);
+    if(bossFight == true)
+    {
+        context.drawImage(fog.img, fog.x, fog.y, 912, 512);
+    }
+    context.drawImage(player.img, (player.img.width / 4) * currentFrame, 0, 214, 368, player.x, player.y, 107, 184);
 
     if(bossFight == true)
     {
@@ -562,4 +571,8 @@ function centreCharacter(){
         boss.x = boss.x + 1;
     }
     
+    if(player.x == 550 && player.y == (canvas.height - 180))
+    {
+        player.img.src =  "./img/playerBack.png";
+    }
 }
