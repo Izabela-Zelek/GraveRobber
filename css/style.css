@@ -18,7 +18,7 @@ img{
     background-color:#ba96d1;
     position: absolute;
     top: 80vh;
-    left: 43vw;
+    left: 40vw;
 }
 
 .list{
@@ -30,7 +30,7 @@ img{
 .button {
     border: none;
     box-shadow: 0 9px#505050;
-    padding: 30px;
+    padding: 30%,30%;
     text-align: center;
     font-size: 30px;
 }
@@ -70,8 +70,8 @@ img{
 
 .divTable{
     position: absolute;
-    bottom: 5vh;
-    right: 20vw;
+    top: 70%;
+    right: 10%;
     display: table;
     width: 25%;
 }
@@ -83,7 +83,7 @@ img{
 .divTableCell, .divTableHead {
 	border: none;
 	display: table-cell;
-	padding: 3px 5px;
+	padding: 3% 5%;
 }
 
 .divTableHeading {
@@ -125,11 +125,11 @@ footer {
 
 select {
     position: absolute;
-    left: 20vw;
-    bottom: 18vh;
+    left: 8vw;
+    top: 75vh;
     font-size: 20px;
     height: 5vh;
-    padding: 2px 5px;
+    padding: 2px 2px;
     color: white;
     background-color: rgb(134, 25, 148);
 }
