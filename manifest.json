@@ -38,5 +38,5 @@
     "display": "minimal-ui",
     "orientation": "landscape",
     "scope": "/",
-    "start_url": "/index.html"
+    "start_url": "./index.html"
 }
