@@ -1,0 +1,42 @@
+{
+    "name": "Izabela Zelek Progressive Web Application",
+    "short_name": "IzzyZ PWA",
+
+    "icons": [{
+        "src": "img/128_128.png",
+        "sizes": "128x128",
+        "type": "image/png"
+    }, {
+        "src": "img/144_144.png",
+        "sizes": "144x144",
+        "type": "image/png"
+    }, {
+        "src": "img/152_152.png",
+        "sizes": "152x152",
+        "type": "image/png"
+    }, {
+        "src": "img/192_192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+    }, {
+        "src": "img/256_256.png",
+        "sizes": "256x256",
+        "type": "image/png"
+    }, {
+        "src": "img/512_512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+    }, {
+        "src": "img/maskable_icon.png",
+        "sizes": "196x196",
+        "type": "image/png",
+        "purpose": "any maskable"
+    }],
+
+    "theme_color": "#ffffff",
+    "background_color": "#000000",
+    "display": "minimal-ui",
+    "orientation": "landscape",
+    "scope": "/",
+    "start_url": "./GraveRobber/"
+}
