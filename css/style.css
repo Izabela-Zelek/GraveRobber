@@ -16,15 +16,11 @@ img{
     color: black;
     width: 10vw;
     background-color:#ba96d1;
-    position: absolute;
-    top: 80vh;
-    left: 40vw;
+    position: relative;
 }
 
 .list{
-    position: absolute;
-    top: 60vh;
-    right: 20vw;
+    position: relative;
 }
 
 .button {
@@ -69,9 +65,8 @@ img{
 }
 
 .divTable{
-    position: absolute;
-    top: 70%;
-    right: 10%;
+    position: relative;
+    left: 70%;
     display: table;
     width: 25%;
 }
@@ -124,9 +119,8 @@ footer {
 }
 
 select {
-    position: absolute;
-    left: 8vw;
-    top: 75vh;
+    position: relative;
+    left: -20%;
     font-size: 20px;
     height: 5vh;
     padding: 2px 2px;
