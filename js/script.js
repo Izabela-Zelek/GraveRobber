@@ -12,8 +12,8 @@ function GameObject(name, img, health, x, y) {
 }
 
 function drawTimer(timeLeft) {
-    var width = 912;
-    var height = 20;
+    var width = 304;
+    var height = 5;
     var max = 400;
     var value = timeLeft;
 
@@ -75,11 +75,11 @@ var canFight = false;
 
 var player = new GameObject("Player", sprite, 100, 0, 0);
 var boss = new GameObject("Boss", bossSprite, 100, -700, 180);
-var graveOne = new GameObject("GraveOne", graveSprite, 100, 155, 250);
-var graveTwo = new GameObject("GraveTwo", graveSprite, 100, 355, 250);
-var graveThree = new GameObject("GraveThree", graveSprite, 100, 555, 250);
-var graveFour = new GameObject("GraveFour", graveSprite, 100, 755, 250);
-var userGrave = new GameObject("NamelessGrave", nameGrave, 100, 625, 80);
+var graveOne = new GameObject("GraveOne", graveSprite, 100, 40, 80);
+var graveTwo = new GameObject("GraveTwo", graveSprite, 100, 100, 80);
+var graveThree = new GameObject("GraveThree", graveSprite, 100, 160, 80);
+var graveFour = new GameObject("GraveFour", graveSprite, 100, 220, 80);
+var userGrave = new GameObject("NamelessGrave", nameGrave, 100, 198, 40);
 var bg = new GameObject("Graveyard", gravebg, 100, 0, 0);
 var fog = new GameObject("Fog", fogSprite, 100, 0, 500);
 var endScreen = new GameObject("End", bgSprite, 100, 0, 0);
@@ -137,18 +137,10 @@ function input(event) {
                     gamerInput = new GamerInput("Left");
                     direction = 1;
                     break; //Left key
-                case 38:
-                    gamerInput = new GamerInput("Up");
-                    direction = 2;
-                    break; //Up key
                 case 39:
                     gamerInput = new GamerInput("Right");
                     direction = 3;
                     break; //Right key
-                case 40:
-                    gamerInput = new GamerInput("Down");
-                    direction = 4;
-                    break; //Down key
                 case 69:
                     dig = true;
                     break;
@@ -178,21 +170,11 @@ function update() {
             showHealthAnnounce = false;
             player.img.src = "./img/playerBack.png";
             break;
-        case 2:
-            player.y -= 1;
-            showAnnouncement = false;
-            showHealthAnnounce = false;
-            break;
         case 3:
             player.x += 1;
             showAnnouncement = false;
             showHealthAnnounce = false;
             player.img.src = "./img/player.png";
-            break;
-        case 4:
-            player.y += 1;
-            showAnnouncement = false;
-            showHealthAnnounce = false;
             break;
     }
     if (bossFight == false) {
@@ -241,25 +223,24 @@ function animate() {
     }
     // Draw sprite frame
     context.clearRect(0, 0, canvas.width, canvas.height);
-    context.drawImage(bg.img, bg.x, bg.y, 912, 512);
+    context.drawImage(bg.img, bg.x, bg.y, 304, 171);
+    context.drawImage(userGrave.img, userGrave.x, userGrave.y, 37, 47);
     if (alive[0] == true) {
-        context.drawImage(graveOne.img, graveOne.x, graveOne.y, 141.3333333333333, 170.6666666666667);
+        context.drawImage(graveOne.img, graveOne.x, graveOne.y, 47, 57);
     }
     if (alive[1] == true) {
-        context.drawImage(graveTwo.img, graveTwo.x, graveTwo.y, 141.3333333333333, 170.6666666666667);
+        context.drawImage(graveTwo.img, graveTwo.x, graveTwo.y, 47, 57);
     }
     if (alive[2] == true) {
-        context.drawImage(graveThree.img, graveThree.x, graveThree.y, 141.3333333333333, 170.6666666666667);
+        context.drawImage(graveThree.img, graveThree.x, graveThree.y, 47, 57);
     }
     if (alive[3] == true) {
-        context.drawImage(graveFour.img, graveFour.x, graveFour.y, 141.3333333333333, 170.6666666666667);
+        context.drawImage(graveFour.img, graveFour.x, graveFour.y, 47, 57);
     }
-
-    context.drawImage(userGrave.img, userGrave.x, userGrave.y, 106, 128);
     if (bossFight == true) {
         context.drawImage(fog.img, fog.x, fog.y, 912, 512);
     }
-    context.drawImage(player.img, (player.img.width / 4) * currentFrame, 0, 214, 368, player.x, player.y, 107, 184);
+    context.drawImage(player.img, (player.img.width / 4) * currentFrame, 0, 71.34, 122.67, player.x, player.y, 35.67, 61.34);
 
     if (bossFight == true) {
         context.drawImage(boss.img, boss.x, boss.y, boss.img.width / 1.5, boss.img.height / 1.5);
@@ -275,41 +256,41 @@ function showText() {
 
     if(!bossFight)
     {
-        context.font = "10px Verdana";
+        context.font = "5px Verdana";
         context.fillStyle = "black";
-        context.fillText(uname, 655, 120);
+        context.fillText(uname, userGrave.x + 10, userGrave.y + 15);
 
         if (showE == true) {
-        context.font = "30px Verdana";
+        context.font = "10px Verdana";
         context.fillStyle = "white";
         context.fillText("E", player.x + (player.img.width / 16), player.y - 10);
         }
     if (showAnnouncement == true || showHealthAnnounce == true) {
         context.fillStyle = '#CEB6DD';
-        context.fillRect(256, 181, 400, 100);
+        context.fillRect(85.34, 60.34, 133.34, 33.34);
     }
     if (weapon == "Sword" && showAnnouncement == true) {
-        context.font = "30px Verdana";
+        context.font = "10px Verdana";
         context.fillStyle = "black";
-        context.fillText("Sword Found!", 346, 246);
+        context.fillText("Sword Found!", 115.34, 82);
         console.log(healthStuff);
     }
     else if (weapon == "Dagger" && showAnnouncement == true) {
-        context.font = "30px Verdana";
+        context.font = "10px Verdana";
         context.fillStyle = "black";
-        context.fillText("Dagger Found!", 346, 246);
+        context.fillText("Dagger Found!", 115.34, 82);
         console.log(healthStuff);
     }
     if (chosenHealth == "Health Potion" && showHealthAnnounce == true) {
-        context.font = "30px Verdana";
+        context.font = "10px Verdana";
         context.fillStyle = "black";
-        context.fillText("Health Potion Found!", 306, 246);
+        context.fillText("Health Potion Found!", 102, 82);
         console.log(healthStuff);
     }
     else if (chosenHealth == "Food" && showHealthAnnounce == true) {
-        context.font = "30px Verdana";
+        context.font = "10px Verdana";
         context.fillStyle = "black";
-        context.fillText("Food Found!", 366, 246);
+        context.fillText("Food Found!", 122, 82);
         console.log(healthStuff);
     }
     }
@@ -321,8 +302,8 @@ function showText() {
 
 //boundary checking
 function boundaryCheck() {
-    if (player.x < 0 - 20) {
-        player.x = 0 - 20;
+    if (player.x < 0 ) {
+        player.x = 0 ;
     }
 
     else if (player.x > (canvas.width - (player.img.width / 8))) {
@@ -334,8 +315,8 @@ function boundaryCheck() {
     }
 
 
-    else if (player.y > (canvas.height - 180)) {
-        player.y = (canvas.height - 180);
+    else if (player.y > (canvas.height - 60)) {
+        player.y = (canvas.height - 60);
     }
 
 }
