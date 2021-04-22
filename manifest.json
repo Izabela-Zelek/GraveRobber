@@ -1,6 +1,6 @@
 {
-    "name": "MuddyGames Progressive Web Application",
-    "short_name": "MuddyGames PWA",
+    "name": "Izabela Zelek Progressive Web Application",
+    "short_name": "IzzyZ PWA",
 
     "icons": [{
         "src": "img/128_128.png",
@@ -38,5 +38,5 @@
     "display": "minimal-ui",
     "orientation": "landscape",
     "scope": "/",
-    "start_url": "/GraveRobber"
+    "start_url": "./GraveRobber/index.html"
 }
