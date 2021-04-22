@@ -3,18 +3,6 @@
 // In JavaScript you can consider everything an Object
 // including functions
 
-// Reading File from a Server
-var xmlhttp = new XMLHttpRequest();
-xmlhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-        var data = JSON.parse(xmlhttp.responseText);
-        //document.getElementById("player").innerHTML = data[0];
-        console.log(data.PlayerData);
-    }
-};
-xmlhttp.open("GET", "./data/derulo.json", true);
-xmlhttp.send();
-
 function GameObject(name, img, health, x, y) {
     this.name = name;
     this.img = img;
