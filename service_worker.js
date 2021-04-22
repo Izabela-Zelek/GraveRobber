@@ -1,7 +1,7 @@
 var cacheName = 'muddygames-pwa';
 var filesToCache = [
   '/',
-  '/GraveRobber/index.html',
+  '/GraveRobber/',
   '/css/style.css',
   '/js/script.js'
 ];
