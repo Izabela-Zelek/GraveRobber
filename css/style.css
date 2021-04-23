@@ -14,9 +14,10 @@ img{
 
   .use {
     color: black;
-    width: 10vw;
+    width: 5vw;
     background-color:#ba96d1;
     position: relative;
+    left: -3vw;
 }
 
 .list{
@@ -28,7 +29,7 @@ img{
     box-shadow: 0 9px#505050;
     padding: 30%,30%;
     text-align: center;
-    font-size: 30px;
+    font-size: 10px;
 }
 
 .button:active {
@@ -38,11 +39,6 @@ img{
 
 .button:hover {
     background-color: #3F3F3F;
-}
-
-.magenta {
-    background-color:#00000000;
-    color: #9e3f8e;
 }
 
 .green {
@@ -55,10 +51,6 @@ img{
     color: #126112;
 }
 
-.purple {
-    background-color:#00000000;
-    color: #68167c;
-}
 
 .round {
     border-radius: 50%;
@@ -121,8 +113,8 @@ footer {
 select {
     position: relative;
     left: -20%;
-    font-size: 20px;
-    height: 5vh;
+    font-size: 10px;
+    height: 3vh;
     padding: 2px 2px;
     color: white;
     background-color: rgb(134, 25, 148);

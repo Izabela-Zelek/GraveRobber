@@ -1,6 +1,8 @@
-var cacheName = 'muddygames-pwa';
+var cacheName = 'izzyzelek-pwa';
 var filesToCache = [
-  '/GraveRobber',
+  '/',
+  '/index.html',
+  '/GameLoop.html',
   '/css/style.css',
   '/js/script.js'
 ];
