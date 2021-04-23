@@ -17,7 +17,7 @@ img{
     width: 3vw;
     background-color:#ba96d1;
     position: relative;
-    left: -4vw;
+    left: -9vw;
 }
 
 .list{
@@ -112,7 +112,7 @@ footer {
 
 select {
     position: relative;
-    left: -25%;
+    left: -30%;
     font-size: 12px;
     height: 3vh;
     padding: 2px 2px;
