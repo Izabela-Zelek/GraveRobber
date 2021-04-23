@@ -14,10 +14,10 @@ img{
 
   .use {
     color: black;
-    width: 5vw;
+    width: 3vw;
     background-color:#ba96d1;
     position: relative;
-    left: -3vw;
+    left: -4vw;
 }
 
 .list{
@@ -112,7 +112,7 @@ footer {
 
 select {
     position: relative;
-    left: -20%;
+    left: -25%;
     font-size: 12px;
     height: 3vh;
     padding: 2px 2px;
